@@ -24,7 +24,7 @@ pipeline {
         stage ('Deploy-to-Tomcat') {
             steps {
                     sh '''
-                                curl -v -u {'tomcat'} -T /var/jenkins_home/workspace/WebApp-CICD-Pipeline/target/WebApp.war 'http://172.18.0.6:8080/manager/text/deploy?path=/webapps&update=true'
+                                curl -v -u admin:admin -T /var/jenkins_home/workspace/WebApp-CICD-Pipeline/target/WebApp.war 'http://172.18.0.6:8080/manager/text/deploy?path=/webapps&update=true'
                         '''
                 }
             }
