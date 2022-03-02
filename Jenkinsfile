@@ -23,7 +23,9 @@ pipeline {
 
         stage ('Deploy-to-Tomcat') {
             steps {
-                    sh 'curl -v -u {'tomcat'} -T WebApp.war 'http://172.18.0.6:8080/manager/text/deploy?path=/webapps&update=true''
+                    sh '''
+                                curl -v -u {'tomcat'} -T WebApp.war 'http://172.18.0.6:8080/manager/text/deploy?path=/webapps&update=true''
+                        '''
                 }
             }
         }
